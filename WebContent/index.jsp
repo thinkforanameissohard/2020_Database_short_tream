@@ -1,52 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.Statement"%>
-<%@page import="java.sql.PreparedStatement" %>
+<%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>课程管理系统</title>
-	<link rel="stylesheet" type="text/css" href="css/default.css">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,700">
-  	<link rel="stylesheet" href="css/style.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
-	<link rel="stylesheet" type="text/css" href="css/fox.css" />
-	<style>
-	.htmleaf-header h1 span{
-	    color: white;
-	}
-	main{
-		padding:0px;
-	
-	}
-	#footer{
-			bottom: 20px;
-		    position: fixed;
-		    text-align: center;
-		    left: 38%;
-		}
-	</style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课程管理系统</title>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Roboto:300,700">
+<link rel="stylesheet" href="css/style.min.css">
+<link href='https://fonts.googleapis.com/css?family=Freckle+Face'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+<link rel="stylesheet" type="text/css" href="css/fox.css" />
+<style>
+.htmleaf-header h1 span {
+	color: white;
+}
+
+main {
+	padding: 0px;
+}
+
+#footer {
+	bottom: 20px;
+	position: fixed;
+	text-align: center;
+	left: 38%;
+}
+</style>
 </head>
-<body >
+<body>
 	<div id="wrapper" class="wrapper">
-	  <main class="demo-fox">
-			<div class="snow"></div>
-			<div class="container">
+		<main class="demo-fox">
+		<div class="snow"></div>
+		<div class="container">
 			<header class="header htmleaf-header">
-				<h1>欢迎登陆<span>Welcome to our system</span></h1>
-				<div class="htmleaf-links">
-					<a class="htmleaf-icon icon-htmleaf-home-outline" href="bbs.html" target="_blank"><span></span></a> <!-- 论坛 -->
-					<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="login.do" title="" target="_blank"><span> </span></a>
-				</div>
+			<h1>
+				欢迎登陆<span>Welcome to our system</span>
+			</h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="bbs.jsp"
+					target="_blank"><span></span></a>
+				<!-- 论坛 -->
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline"
+					href="login.do" title="" target="_blank"><span> </span></a>
+			</div>
 			</header>
 			<div class="content content--fox">
 				<div class="fox">
@@ -72,8 +80,7 @@
 								<div class="fox-tail">
 									<div class="fox-tail">
 										<div class="fox-tail">
-											<div class="fox-tail">
-											</div>
+											<div class="fox-tail"></div>
 										</div>
 									</div>
 								</div>
@@ -81,44 +88,39 @@
 						</div>
 					</div>
 				</div>
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
-					<defs>
-						<filter id="squiggly-0">
-							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
-							<feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
-						</filter>
-						<filter id="squiggly-1">
-							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
-							<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-						</filter>
-						<filter id="squiggly-2">
-							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
-							<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-						</filter>
-						<filter id="squiggly-3">
-							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
-							<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-						</filter>
-						<filter id="squiggly-4">
-							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
-							<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
-						</filter>
-					</defs>
-				</svg>
-			</div><!-- /content -->
-		</div><!-- /container -->	
-	  </main>
-	</div><!-- /wrapper -->
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+					style="display:none"> <defs> <filter id="squiggly-0">
+				<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3"
+					result="noise" seed="0" /> <feDisplacementMap id="displacement"
+					in="SourceGraphic" in2="noise" scale="2" /> </filter> <filter
+					id="squiggly-1"> <feTurbulence id="turbulence"
+					baseFrequency="0.02" numOctaves="3" result="noise" seed="1" /> <feDisplacementMap
+					in="SourceGraphic" in2="noise" scale="3" /> </filter> <filter
+					id="squiggly-2"> <feTurbulence id="turbulence"
+					baseFrequency="0.02" numOctaves="3" result="noise" seed="2" /> <feDisplacementMap
+					in="SourceGraphic" in2="noise" scale="2" /> </filter> <filter
+					id="squiggly-3"> <feTurbulence id="turbulence"
+					baseFrequency="0.02" numOctaves="3" result="noise" seed="3" /> <feDisplacementMap
+					in="SourceGraphic" in2="noise" scale="3" /> </filter> <filter
+					id="squiggly-4"> <feTurbulence id="turbulence"
+					baseFrequency="0.02" numOctaves="3" result="noise" seed="4" /> <feDisplacementMap
+					in="SourceGraphic" in2="noise" scale="1" /> </filter> </defs> </svg>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /container --> </main>
+	</div>
+	<!-- /wrapper -->
 
 	<button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
-	<jsp:include page="./navbar.jsp"/>
-	
+	<jsp:include page="./navbar.jsp" />
+
 	<script src="js/production/materialMenu.min.js"></script>
 	<script>
 	  var menu = new Menu;
 	</script>
-	<footer id="footer">
-		Copyright &copy; 2020.Company name All rights reserved.公网安备xxxxx号京ICP证xxx号 <!-- 假的备案，能在本机环境允许 -->
-	</footer><!-- footer -->
+	<footer id="footer"> Copyright &copy; 2020.Company name All
+	rights reserved.公网安备xxxxx号京ICP证xxx号 <!-- 假的备案，能在本机环境允许 --> </footer>
+	<!-- footer -->
 </body>
 </html>

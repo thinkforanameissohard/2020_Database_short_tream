@@ -5,7 +5,8 @@
 <title>error page</title>
 </head>
 <body>
-	错误信息为：<br/>
+	错误信息为：
+	<br />
 	<%=exception.getMessage()%><br>
 	<%=exception.toString()%>
 </body>

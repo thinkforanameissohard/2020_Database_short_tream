@@ -1,24 +1,24 @@
 package org.dao;
 import java.sql.*;
 /**
- * 淇敼瀹屾垚
- * 杩欓噷杩涜鐨勬槸SQL server鏁版嵁搴撶殑杩炴帴
- * @author 鍧傜敯閾舵椂
+ * 修改完成
+ * 这里进行的是SQL server数据库的连接
+ * @author 坂田银时
  *
  */
 public class DBBean {
-	private String driverStr = "com.mysql.jdbc.Driver";
-	private String URL="jdbc:mysql://localhost:3306/Management?useSSL=false&useUnicode=true&characterEncoding=utf-8";
-//	private String URL="jdbc:mysql://localhost:3306;DatabaseName=CouseManage";
-	private String USERNAME = "admin1";
-	private String PWD="123456789";
+	private String driverStr = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//	private String URL="jdbc:sqlserver://localhost:1521:CouseManage/?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
+	private String URL="jdbc:sqlserver://localhost:1433;DatabaseName=CouseManage";
+	private String USERNAME = "sa";
+	private String PWD="rxy";
 	private Connection conn = null;
 	private Statement stmt = null;
 	
 	/**
-	 * 杩炴帴鏁版嵁搴�
+	 * 连接数据库
 	 * @param sql
-	 * 瑕佹墽琛岀殑璇彞 
+	 * 要执行的语句 
 	 * */
 	public DBBean() {
 		try {
@@ -26,16 +26,16 @@ public class DBBean {
 			conn = DriverManager.getConnection(URL, USERNAME,PWD);
 			stmt = conn.createStatement();
 		} catch (Exception ex) {
-				System.out.println("数据库连接失败! ");
+			System.out.println(ex);
 		}
 	}
 
 	/**
-	 * 鎵ц鏇存柊锛堝鍒犳敼锛夋搷浣�
+	 * 执行更新（增删改）操作
 	 * @param 
-	 * SQL璇彞
+	 * SQL语句
 	 * @return int
-	 * 鏇存柊鎿嶄綔鐨勭粨鏋� 
+	 * 更新操作的结果 
 	 */
 	public int executeUpdate(String s) {
 		int result = 0;
@@ -53,11 +53,11 @@ public class DBBean {
 	}
 	
 	/**
-	 * 鎵ц鏌ヨ锛堟煡锛夋搷浣�
+	 * 执行查询（查）操作
 	 * @param 
-	 * SQL璇彞
+	 * SQL语句
 	 * @return ResultSet
-	 * 鏌ヨ缁撴灉  
+	 * 查询结果  
 	 */
 	public ResultSet executeQuery(String s) {
 		ResultSet rs = null;
@@ -77,7 +77,7 @@ public class DBBean {
 	}
 
 	/**
-	 * 鍏抽棴鏁版嵁搴�
+	 * 关闭数据库
 	 */
 	public void close() {
 		try

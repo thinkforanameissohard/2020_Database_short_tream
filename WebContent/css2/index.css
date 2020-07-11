@@ -6,13 +6,14 @@
 	/*background-image: url (img/whole.jpg);*/
 	margin: 20px auto;
 }
-.lunboqi{
+
+.lunboqi {
 	width: 80%;
 	height: auto;
 	text-align: center;
 	margin: 20px auto;
-	
 }
+
 .carousel slide {
 	background-color: black;
 }
@@ -25,7 +26,8 @@
 	font-size: 80px;
 	font-size: 18px;
 }
-.duanluo{
+
+.duanluo {
 	background-color: rgba(206, 205, 195, 0.6);
 	width: 80%;
 	margin: 20px auto;

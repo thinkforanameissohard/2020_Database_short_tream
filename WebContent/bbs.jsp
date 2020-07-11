@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="org.entity.Teacher,java.util.ArrayList"%>
+<%@ page import="org.entity.Student,java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
 <head>
@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理系统</title>
+<link rel="stylesheet" href="css2/style.css">
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet"
 	href="http://fonts.googleapis.com/css?family=Roboto:300,700">
@@ -16,6 +17,7 @@
 	href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+
 <style type="text/css">
 .glyphicon {
 	margin-right: 5px;
@@ -148,6 +150,14 @@ input {
 	width: 300px;
 	text-align: center;
 }
+
+.mm-menu-toggle, .mm-menu-toggle::after, .mm-menu-toggle::before {
+	z-index: 9999999999999;
+}
+
+a {
+	color: #337ab7;
+}
 </style>
 </head>
 
@@ -155,112 +165,75 @@ input {
 	<div id="wrapper" class="wrapper">
 		<header class="header htmleaf-header">
 		<h1>
-			教师信息管理<span>Welcome to our system</span>
+			石家庄铁道大学BBS<span>Welcome to our system</span>
 		</h1>
 		</header>
 		<main>
 		<div class="container">
-			<div class="btn-wrapper">
-				<strong>显示为：</strong>
-				<div class="btn-group">
-					<a href="#" id="list" class="btn btn-default btn-sm"> <span
-						class="glyphicon glyphicon-th-list"></span>列表布局
-					</a> <a href="#" id="grid" class="btn btn-default btn-sm"> <span
-						class="glyphicon glyphicon-th"></span>网格布局
-					</a>
+			<div id="products" class="row list-group">
+				<div class="page1_block">
+					<div class="container_12">
+						<div class="grid_6">
+							<h2>
+								<a href="#">校内地图</a>
+							</h2>
+							<br> <img
+								src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=895298005,2700983511&fm=111&gp=0.jpg"
+								alt="" class="img_inner fleft">
+							<div class="extra_wrapper style1">
+								<p class="text1">
+									<a href="发布书籍.html" rel="nofollow">点击这里</a>
+								</p>
+								你了解我们吗？
+							</div>
+
+							<div class="clear"></div>
+							石家庄铁道大学前身是中国人民解放军铁道兵工程学院，创建于1950年，系当时全军重点院校；1979年被列为全国重点高等院校；1984年转属铁道部，更名为石家庄铁道学院；2000年划转河北省，实行中央与地方共建，为河北省重点骨干大学；2010年3月更名为石家庄铁道大学；2015年7月被河北省人民政府、国家铁路局、教育部批准为共建高校；2016年被河北省列为重点支持的一流大学和一流学科建设高校。
+						</div>
+						<div class="grid_5 prefix_1">
+							<h2 class="ic1">
+								<a href="#">校内新鲜事</a>
+							</h2>
+							<ul class="list">
+								<li><span> <time datetime="2019-01-01"> 4月<span>20日</span>
+										</time>
+								</span>
+									<div class="extra_wrapper">
+										<div class="col1">
+											<a href="#">石家庄铁道大学首届大学生生涯体验周</a>
+											<time datetime="2019-01-01">
+											<font color="red" size="3">活动时间：</font>
+											<font color="red">2019.4.22-2019.4.28</font></time>
+										</div>
+										“学生生涯体验周”活动是近年来新出现的一种生涯教育活动形式，是以当前高校的职业生涯规划与就业指导课程教育体系为核心，所开发的一种内容丰富、主题明确、形式新颖、互动性强的大型户外体验式活动项目。
+										该项目的引进和实施，有助于让广大学生更生动形象地了解职业生涯规划和求职面试的相关知识技巧，提升生涯规划的自主性和行动X生涯教育教师学习和掌握开展大型体验式生涯教育活动的方法和技X职业生涯规划与就业指导的手段和形式，营造积极的校园生涯教育氛围。
+									</div></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div id="products" class="row list-group">
-				<%
-						if(request.getParameter("tno")!=null)
-						{
-							Teacher bi = (Teacher) request.getAttribute("bi");
-						%>
-
-				<form class="change" action="teditsave.do"
-					onsubmit="return is_empty()" method="post">
-					<table id="table" style="width: 50%">
-						<tr>
-							<th width="30%">姓名：</th>
-							<td width="70%"><input name="tname" class="input2 Safe"
-								type="text" value="<%=bi.getTname()%>"></input></td>
-						</tr>
-						<tr>
-							<th width="30%">密码：</th>
-							<td width="70%"><input name="password" class="input2 Safe"
-								type="text" value="<%=bi.getPassword()%>"></input></td>
-						</tr>
-						<tr>
-							<th>年龄：</th>
-							<td><input name="tage" class="input2 Safe" type="text"
-								value="<%=bi.getTage()%>"></input></td>
-						</tr>
-						<tr>
-							<th>生日：</th>
-							<td><input name="tbirth" class="input2 Safe" type="date"
-								value="<%=bi.getTbirth()%>"></input></td>
-						</tr>
-						<tr>
-							<th>地址：</th>
-							<td><input name="taddress" class="input2 Safe" type="text"
-								value="<%=bi.getTaddress()%>"></input></td>
-						</tr>
-						<tr>
-							<th></th>
-							<td><input type="hidden" name="tno" value="<%=bi.getTno()%>"></input>
-							</td>
-						</tr>
-						<tr>
-							<th></th>
-							<td><input type="submit" class="input1" value="修改"></input>
-								<input type="reset" value="重置"></input></td>
-						</tr>
-					</table>
-				</form>
-				<% }
-							else
-							{
-								@SuppressWarnings("unchecked") 
-								ArrayList<Teacher> list = (ArrayList<Teacher>) request.getAttribute("list"); 
-								for (Teacher bi : list)
-								{
-									String tno = bi.getTno();
-									out.print("<div class=\"item  col-xs-4 col-lg-4\">"+
-												"<div class=\"thumbnail\">"+
-										        "<img class=\"group list-group-image\" src=\"img/link-fox.png\" alt=\"\" />"+
-										        "<div class=\"caption\">"+
-										            "<h4 class=\"group inner list-group-item-heading\">"+bi.getTname()+"</h4>"+
-														"<ul>"+
-															"<li>工号："+bi.getTno()+"</li>"+
-															"<li>密码："+bi.getPassword()+"</li>"+
-															"<li>年龄："+bi.getTage()+"</li>"+
-															"<li>生日："+bi.getTbirth()+"</li>"+
-															"<li>家庭住址："+bi.getTaddress()+"</li>"+
-															
-														"</ul>"+
-										            "<div class=\"row\">"+
-										                "<div class=\"col-xs-12 col-md-6\">"+
-										                    "<a class=\"btn btn-success\"  onclick=\"displayWindow()\" href=\"teacher.do?tno="+tno+"\">修改</a>"+
-										                "</div>"+
-														"<div class=\"col-xs-12 col-md-6\">"+
-														    "<a class=\"btn btn-success\" href=\"tdel.do?tno="+tno+"\">删除</a>"+
-														"</div>"+
-										            "</div>"+
-										        "</div>"+
-										      "</div>"+
-										   "</div>");
-									
-								}
-							}
-					%>
-			</div>
 		</div>
-		</main>
+	</div>
+	</main>
 	</div>
 	<!-- /wrapper -->
 
 	<button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
-	<jsp:include page="./navbar.jsp" />
+	<nav id="mm-menu" class="mm-menu">
+	<div class="mm-menu__header">
+		<h2 class="mm-menu__title"></h2>
+	</div>
+	<ul class="mm-menu__items">
+		<li class="mm-menu__item"><a class="mm-menu__link" href='分享.html'>
+				<span class="mm-menu__link-text"><i class="md md-home"></i>发帖</span>
+		</a></li>
+		<li class="mm-menu__item"><a class="mm-menu__link" href="评论.jsp">
+				<span class="mm-menu__link-text"><i class="md md-settings"></i>跟帖</span>
+		</a></li>
+	</ul>
+	</nav>
+	<!-- /nav -->
 
 	<script src="js/production/materialMenu.min.js"></script>
 	<script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>上传作业</title>
+</head>
+<style type="text/css">
+.glyphicon {
+	margin-right: 5px;
+}
+
+.btn-wrapper {
+	padding: 1em 0;
+}
+
+.thumbnail {
+	margin-bottom: 20px;
+	padding: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.item.list-group-item {
+	float: none;
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover
+	{
+	background: #428bca;
+}
+
+.item.list-group-item .list-group-image {
+	margin-right: 10px;
+}
+
+.item.list-group-item .thumbnail {
+	margin-bottom: 0px;
+}
+
+.item.list-group-item .caption {
+	padding: 9px 9px 0px 9px;
+}
+
+.item.list-group-item:nth-of-type(odd) {
+	background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after {
+	display: table;
+	content: " ";
+}
+
+.item.list-group-item img {
+	float: left;
+}
+
+.item.list-group-item:after {
+	clear: both;
+}
+
+.list-group-item-text {
+	margin: 0 0 11px;
+}
+
+body {
+	background-color: #CDDC39;
+	background:
+		url("https://pic2.zhimg.com/80/1d4b229e2e625a236a57fb44b67f6f7b_720w.jpg");
+	background-size: 100%;
+}
+
+#footer {
+	bottom: 20px;
+	position: fixed;
+	text-align: center;
+	left: 38%;
+}
+
+.btn-wrapper {
+	text-align: center;
+}
+
+.thumbnail {
+	padding: 10px;
+}
+
+.col-md-6 {
+	text-align: center;
+}
+
+.item.list-group-item {
+	left: 10%;
+	width: 80%;
+}
+
+.input2 {
+	width: 300px;
+	text-align: center;
+}
+</style>
+<body>
+	<center class="input2 safe">
+
+
+		<form class="change" action="ceditsave.jsp"
+			onsubmit="return is_empty()" method="post">
+			<table id="table" style="width: 800px;">
+				<tr>
+					<th width="30%">上传者：</th>
+					<td width="70%"><input name="hname" class="input2 Safe"
+						type="text""></input></td>
+				</tr>
+				<tr>
+					<th width="30%">学号：</th>
+					<td width="70%"><input name="sno" class="input2 Safe"
+						type="text"></input></td>
+				</tr>
+				<tr>
+					<th width="30%">教师号：</th>
+					<td width="70%"><input name="tno" class="input2 Safe"
+						type="text"></input></td>
+				</tr>
+				<tr>
+					<th width="30%">课程号：</th>
+					<td width="70%"><input name="cno" class="input2 Safe"
+						type="text""></input></td>
+				</tr>
+				<tr>
+					<th width="30%">上传时间：</th>
+					<td width="70%"><input name="htime" class="input2 Safe"
+						type="text""></input></td>
+				</tr>
+				<tr>
+					<th width="30%">上传内容：</th>
+					<td width="70%"><input name="hcontent" class="input2 Safe"
+						type="text"" ></input></td>
+					<br>
+
+					<td>
+						<button class="cancle" type="submit">上传</button>
+
+						<button class="cancle" type="reset">重置</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+
+	</center>
+</body>
+</html>

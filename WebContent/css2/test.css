@@ -1,19 +1,21 @@
-.zi{
-	 position: absolute;
-                width: 100%;
-                bottom: 50px;
-                left: 0px;
-                /*text-align: center;*/
-                font-size: 18px;
-                color: black;
+.zi {
+	position: absolute;
+	width: 100%;
+	bottom: 50px;
+	left: 0px;
+	/*text-align: center;*/
+	font-size: 18px;
+	color: black;
 }
-.lijiang{
+
+.lijiang {
 	float: left;
- 	margin: 5px;
-                position: relative;
-                width: 330px;
-                height: 410px;
-            }
+	margin: 5px;
+	position: relative;
+	width: 330px;
+	height: 410px;
+}
+
 .whole {
 	width: 80%;
 	height: auto;

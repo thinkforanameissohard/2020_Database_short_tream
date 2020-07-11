@@ -308,11 +308,8 @@ h4 {
 <body>
 	<%
 request.setCharacterEncoding("utf-8");	
-/* Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Management", "admin1", "123456789"); */
-Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-/* Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Management", "admin1", "123456789"); */
-Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;DatabaseName=CouseManage", "sa", "rxy");
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Management", "admin1", "123456789");
 %>
 	<link rel='stylesheet prefetch'
 		href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
@@ -320,100 +317,24 @@ Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;Da
 		<div class="response-group">
 			<div class="response">
 				<div class="response__number"></div>
-				<h1 class="response__title">欢迎进入论坛区</h1>
+				<h1 class="response__title">欢迎进入论坛评论区</h1>
 				<div class="post-group">
 					<div class="post">
 						<div class="post__avatar"></div>
-						<%PreparedStatement stmt = con.prepareStatement("SELECT * FROM bbs1 ORDER BY btime DESC LIMIT 1 ");
-					ResultSet rs = stmt.executeQuery();
-					rs.next();
-					%>
-						<h3 class="post__author"><%=rs.getString(1)%></h3>
-						<h4 class="post__timestamp"><%=rs.getString(2)%></h4>
-						<p class="post__body"><%=rs.getString(3)%></p>
-						<div class="post__actions">
-							<form class="contact_form" action="fx2.html">
-								<div class="button button--approve">
-									<i class="fa fa-thumbs-o-up"></i><i
-										class="fa fa-thumbs-up solid"></i>
-								</div>
-								<div class="button button--deny">
-									<i class="fa fa-thumbs-o-down"></i><i
-										class="fa fa-thumbs-down solid"></i>
-								</div>
-								<button class="submit" type="submit">发布我的内容</button>
-								<a href="zhuijia1.jsp">查看更多</a>
-								<div class="post__comment">
-									<div class="comment-form">
-										<div class="comment-form__avatar"></div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-
-					<div class="post">
-						<div class="post__avatar"></div>
-						<%PreparedStatement stmt1 = con.prepareStatement("select  * from bbs1 where btime in(select btime from (select * from bbs1 order by btime desc limit 2) as t3)order by btime asc limit 1 ");
-                      ResultSet rs1 = stmt1.executeQuery();
-                      rs1.next();%>
-						<h3 class="post__author"><%=rs1.getString(1)%></h3>
-						<h4 class="post__timestamp"><%=rs1.getString(2)%>
-						</h4>
-						<p class="post__body"><%=rs1.getString(3)%></p>
-						<div class="post__actions">
-							<form class="contact_form" action="fx2.html">
-								<div class="button button--approve">
-									<i class="fa fa-thumbs-o-up"></i><i
-										class="fa fa-thumbs-up solid"></i>
-								</div>
-								<div class="button button--deny">
-									<i class="fa fa-thumbs-o-down"></i><i
-										class="fa fa-thumbs-down solid"></i>
-								</div>
-								<button class="submit" type="submit">发布我的内容</button>
-								<a href="zhuijia2.jsp">查看更多</a>
-								<div class="post__comment">
-									<div class="comment-form">
-										<div class="comment-form__avatar"></div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="post">
-						<div class="post__avatar"></div>
-						<%PreparedStatement stmt2 = con.prepareStatement("select  * from bbs1 where btime in(select btime from (select * from bbs1 order by btime desc limit 3) as t3)order by btime asc limit 1");
-                      ResultSet rs2 = stmt2.executeQuery();
-                      rs2.next();%>
-						<h3 class="post__author"><%=rs2.getString(1)%></h3>
-						<h4 class="post__timestamp"><%=rs2.getString(2)%></h4>
-						<p class="post__body"><%=rs2.getString(3)%></p>
-						<div class="post__actions">
-							<form class="contact_form" action="fx2.html">
-								<div class="button button--approve">
-									<i class="fa fa-thumbs-o-up"></i><i
-										class="fa fa-thumbs-up solid"></i>
-								</div>
-								<div class="button button--deny">
-									<i class="fa fa-thumbs-o-down"></i><i
-										class="fa fa-thumbs-down solid"></i>
-								</div>
-								<button class="submit" type="submit">发布我的内容</button>
-								<a href="zhuijia3.jsp">查看更多</a>
-								<div class="post__comment">
-									<div class="comment-form">
-										<div class="comment-form__avatar"></div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>$(".button").click(function() {
+						<%
+                    Statement stmt = con.createStatement();
+                    String s = "select * from bbs2 where bbs2.bno1 = ( SELECT bno FROM bbs1 ORDER BY btime DESC LIMIT 1 ) ORDER BY btime DESC ";
+    				ResultSet rs = stmt.executeQuery(s);
+    				while (rs.next()) {
+    					out.println("<h3 >" + rs.getString(1)
+    							+ "</h3><h4>" + rs.getString(2) 
+    							+ "</h4><p>" + rs.getString(4)+"</p>");
+    							}
+    				rs.close();
+    				stmt.close();
+    				con.close();
+                    %>
+						<script>$(".button").click(function() {
     $(this).toggleClass("active");
 });
 

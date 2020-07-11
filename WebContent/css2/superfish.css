@@ -1,27 +1,37 @@
- /*导航菜单*/
-.menu_block  {
+/*导航菜单*/
+.menu_block {
 	position: relative;
 	float: right;
 	padding-top: 50px;
 }
+
 nav>.sf-menu {
 	text-align: center;
 }
-nav{ position:relative;
+
+nav {
+	position: relative;
 	padding: 0px 0 0 0;
 }
+
 .sf-menu ul {
-	display:none;/* 子菜单需要隐藏 */
+	display: none; /* 子菜单需要隐藏 */
 }
-.sf-menu li {float:left;position:relative; }
+
+.sf-menu li {
+	float: left;
+	position: relative;
+}
+
 .sf-menu>li {
 	float: left;
 	position: relative;
-
 }
+
 .sf-menu>li+li {
 	margin-left: 49px;
 }
+
 .sf-menu>li+li:after {
 	background: url(../images/menu_separator.png) 0 0 no-repeat;
 	content: '';
@@ -33,6 +43,7 @@ nav{ position:relative;
 	left: -25px;
 	top: -4px;
 }
+
 .sf-menu>li:first-child {
 	margin-left: 0;
 }
@@ -40,7 +51,8 @@ nav{ position:relative;
 .sf-menu>li:hover, .sf-menu>li.sfHover, .sf-menu>li.current {
 	border-color: #a92c11;
 }
-.sf-menu>li>a{
+
+.sf-menu>li>a {
 	font-size: 20px;
 	font-family: 'Noto Sans', sans-serif;
 	color: #c5c3c3;
@@ -50,13 +62,14 @@ nav{ position:relative;
 	position: relative;
 }
 
-.sf-menu>li.sfHover>a, .sf-menu>li.current>a, .sf-menu>li:hover>a:hover {
+.sf-menu>li.sfHover>a, .sf-menu>li.current>a, .sf-menu>li:hover>a:hover
+	{
 	color: #fff;
 }
 
 /*================================>> 2 Level <<========================================*/
-.sf-menu li ul,.sf-menu li.sfHover>ul{
-	top:27px;
+.sf-menu li ul, .sf-menu li.sfHover>ul {
+	top: 27px;
 	left: -14px;
 	width: 113px;
 	z-index: 999;
@@ -64,19 +77,20 @@ nav{ position:relative;
 	padding-bottom: 18px;
 	background: url(../images/sub_bg.png) 0 0 repeat;
 }
-.sf-menu li ul li{
+
+.sf-menu li ul li {
 	text-align: left;
 	float: none !important;
 	margin-bottom: 2px;
 	padding-left: 14px;
 }
 
-
 .sf-menu li ul li:first-child {
 	padding-top: 0;
 	border: none;
 }
-.sf-menu li ul li a{
+
+.sf-menu li ul li a {
 	font-size: 14px;
 	font-family: 'Noto Sans', sans-serif;
 	color: #fff;
@@ -84,22 +98,23 @@ nav{ position:relative;
 	position: relative;
 }
 
-.sf-menu li li a:hover,
-.sf-menu li.sfHover li.sfHover>a {
+.sf-menu li li a:hover, .sf-menu li.sfHover li.sfHover>a {
 	color: #c5c3c3;
 }
- nav ul li:hover > ul {
-	 display: block;
- }
- nav ul ul {
-	 background: #5f6975;
-	 border-radius: 2px;
-	 padding: 0;
-	 position: absolute;
-	 top: 100%;
- }
- nav ul ul li {
-	 float: none;
-	 border-top: 1px solid #fff1e5;
- }
 
+nav ul li:hover>ul {
+	display: block;
+}
+
+nav ul ul {
+	background: #5f6975;
+	border-radius: 2px;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+}
+
+nav ul ul li {
+	float: none;
+	border-top: 1px solid #fff1e5;
+}

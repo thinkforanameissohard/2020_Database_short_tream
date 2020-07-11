@@ -1,17 +1,14 @@
 .webdesigntuts-workshop {
-	
 	height: 100%;
 	width: 100%;
 }
 
-.webdesigntuts-workshop:before,
-.webdesigntuts-workshop:after {
+.webdesigntuts-workshop:before, .webdesigntuts-workshop:after {
 	content: '';
-	display: block;	
+	display: block;
 	height: 0px;
 	left: 50%;
 	margin: 0 0 0 -400px;
-
 	width: 800px;
 }
 
@@ -27,11 +24,11 @@
 
 .webdesigntuts-workshop:after {
 	background: #000;
-	background: -webkit-linear-gradient(left, #151515, #000, #151515);	
-	background: -moz-linear-gradient(left, #151515, #000, #151515);	
-	background: -o-linear-gradient(left, #151515, #000, #151515);	
-	background: -ms-linear-gradient(left, #151515, #000, #151515);	
-	background: linear-gradient(left, #151515, #000, #151515);	
+	background: -webkit-linear-gradient(left, #151515, #000, #151515);
+	background: -moz-linear-gradient(left, #151515, #000, #151515);
+	background: -o-linear-gradient(left, #151515, #000, #151515);
+	background: -ms-linear-gradient(left, #151515, #000, #151515);
+	background: linear-gradient(left, #151515, #000, #151515);
 	top: 191px;
 }
 
@@ -49,17 +46,16 @@
 	font-size: 0px;
 	margin: 50% auto 0;
 	padding: 20px;
-	
 	z-index: 1;
 }
 
 .webdesigntuts-workshop input {
 	background: #222;
-	background: -webkit-linear-gradient(#333, #222);	
-	background: -moz-linear-gradient(#333, #222);	
-	background: -o-linear-gradient(#333, #222);	
-	background: -ms-linear-gradient(#333, #222);	
-	background: linear-gradient(#333, #222);	
+	background: -webkit-linear-gradient(#333, #222);
+	background: -moz-linear-gradient(#333, #222);
+	background: -o-linear-gradient(#333, #222);
+	background: -ms-linear-gradient(#333, #222);
+	background: linear-gradient(#333, #222);
 	border: 1px solid #444;
 	border-radius: 5px 0 0 5px;
 	box-shadow: 0 2px 0 #000;
@@ -81,11 +77,11 @@
 }
 
 .webdesigntuts-workshop input::-webkit-input-placeholder {
-   color: #888;
+	color: #888;
 }
 
 .webdesigntuts-workshop input:-moz-placeholder {
-   color: #888;
+	color: #888;
 }
 
 .webdesigntuts-workshop input:focus {
@@ -101,12 +97,13 @@
 	background: -ms-linear-gradient(#333933, #222922);
 	background: linear-gradient(#333933, #222922);
 	border-color: #393;
-	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
 	color: #efe;
 	outline: none;
 }
 
-.webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
+.webdesigntuts-workshop input:focus::-webkit-input-placeholder {
 	color: #efe;
 }
 
@@ -143,15 +140,15 @@
 	position: relative;
 	text-shadow: 0 -1px 0 #000;
 	width: 80px;
-}	
+}
 
-.webdesigntuts-workshop button:hover,
-.webdesigntuts-workshop button:focus {
+.webdesigntuts-workshop button:hover, .webdesigntuts-workshop button:focus
+	{
 	background: #292929;
-	background: -webkit-linear-gradient(#393939, #292929);	
-	background: -moz-linear-gradient(#393939, #292929);	
-	background: -o-linear-gradient(#393939, #292929);	
-	background: -ms-linear-gradient(#393939, #292929);	
+	background: -webkit-linear-gradient(#393939, #292929);
+	background: -moz-linear-gradient(#393939, #292929);
+	background: -o-linear-gradient(#393939, #292929);
+	background: -ms-linear-gradient(#393939, #292929);
 	background: linear-gradient(#393939, #292929);
 	color: #5f5;
 	outline: none;
@@ -168,57 +165,282 @@
 	top: 1px;
 }
 
-@-webkit-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+@
+-webkit-keyframes glow { 0% {
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
 }
 
-@-moz-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+100%
+{
+border-color
+:
+ 
+#6f6
+;
+
+		
+box-shadow
+:
+ 
+0
+0
+20
+px
+ 
+rgba
+(0
+,
+255,0,
+.6
+)
+,
+inset
+ 
+0
+0
+10
+px
+ 
+rgba
+(0
+,
+255,0,
+.4
+)
+,
+0
+2
+px
+ 
+0
+#000
+;
+
+    
+}
+}
+@
+-moz-keyframes glow { 0% {
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
 }
 
-@-o-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+100%
+{
+border-color
+:
+ 
+#6f6
+;
+
+		
+box-shadow
+:
+ 
+0
+0
+20
+px
+ 
+rgba
+(0
+,
+255,0,
+.6
+)
+,
+inset
+ 
+0
+0
+10
+px
+ 
+rgba
+(0
+,
+255,0,
+.4
+)
+,
+0
+2
+px
+ 
+0
+#000
+;
+
+    
+}
+}
+@
+-o-keyframes glow { 0% {
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
 }
 
-@-ms-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+100%
+{
+border-color
+:
+ 
+#6f6
+;
+
+		
+box-shadow
+:
+ 
+0
+0
+20
+px
+ 
+rgba
+(0
+,
+255,0,
+.6
+)
+,
+inset
+ 
+0
+0
+10
+px
+ 
+rgba
+(0
+,
+255,0,
+.4
+)
+,
+0
+2
+px
+ 
+0
+#000
+;
+
+    
+}
+}
+@
+-ms-keyframes glow { 0% {
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
 }
 
-@keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+100%
+{
+border-color
+:
+ 
+#6f6
+;
+
+		
+box-shadow
+:
+ 
+0
+0
+20
+px
+ 
+rgba
+(0
+,
+255,0,
+.6
+)
+,
+inset
+ 
+0
+0
+10
+px
+ 
+rgba
+(0
+,
+255,0,
+.4
+)
+,
+0
+2
+px
+ 
+0
+#000
+;
+
+    
+}
+}
+@
+keyframes glow { 0% {
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px
+		rgba(0, 255, 0, .1), 0 2px 0 #000;
+}
+100%
+{
+border-color
+:
+ 
+#6f6
+;
+
+		
+box-shadow
+:
+ 
+0
+0
+20
+px
+ 
+rgba
+(0
+,
+255,0,
+.6
+)
+,
+inset
+ 
+0
+0
+10
+px
+ 
+rgba
+(0
+,
+255,0,
+.4
+)
+,
+0
+2
+px
+ 
+0
+#000
+;
+
+    
+}
 }
