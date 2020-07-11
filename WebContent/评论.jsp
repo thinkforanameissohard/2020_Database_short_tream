@@ -324,7 +324,7 @@ Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;Da
 				<div class="post-group">
 					<div class="post">
 						<div class="post__avatar"></div>
-						<%PreparedStatement stmt = con.prepareStatement("SELECT * FROM bbs1 ORDER BY btime DESC LIMIT 1 ");
+						<%PreparedStatement stmt = con.prepareStatement("select  top 1 * from bbs1 order by btime desc ");
 					ResultSet rs = stmt.executeQuery();
 					rs.next();
 					%>
@@ -354,7 +354,7 @@ Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;Da
 
 					<div class="post">
 						<div class="post__avatar"></div>
-						<%PreparedStatement stmt1 = con.prepareStatement("select  * from bbs1 where btime in(select btime from (select * from bbs1 order by btime desc limit 2) as t3)order by btime asc limit 1 ");
+						<%PreparedStatement stmt1 = con.prepareStatement("select  top 1 * from bbs1 where btime in(select btime from (select top 2 * from bbs1 order by btime desc) as t3)order by btime asc ");
                       ResultSet rs1 = stmt1.executeQuery();
                       rs1.next();%>
 						<h3 class="post__author"><%=rs1.getString(1)%></h3>
@@ -383,7 +383,7 @@ Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;Da
 					</div>
 					<div class="post">
 						<div class="post__avatar"></div>
-						<%PreparedStatement stmt2 = con.prepareStatement("select  * from bbs1 where btime in(select btime from (select * from bbs1 order by btime desc limit 3) as t3)order by btime asc limit 1");
+						<%PreparedStatement stmt2 = con.prepareStatement("select  top 1 * from bbs1 where btime in(select btime from (select top 3 * from bbs1 order by btime desc) as t3)order by btime asc");
                       ResultSet rs2 = stmt2.executeQuery();
                       rs2.next();%>
 						<h3 class="post__author"><%=rs2.getString(1)%></h3>
